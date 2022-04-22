@@ -1,4 +1,3 @@
-
 pub enum Symbol {
     Multiply,
     Division,
@@ -35,9 +34,9 @@ impl Equation {
         }
     }
     pub fn get_total(&mut self) {
-        self.y = self.symbol.get_y(&self.x1,&self.x2);
+        self.y = self.symbol.get_y(&self.x1, &self.x2);
     }
     pub fn show_total(self) {
-        println!("The total is: {}",self.y.to_string());
+        println!("The total is: {}", self.y.to_string());
     }
 }

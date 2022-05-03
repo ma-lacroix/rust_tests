@@ -1,6 +1,4 @@
-use csv::{Reader, StringRecord};
 use std::error::Error;
-use std::fs::File;
 
 #[allow(unused_results)]
 pub struct FileToRead {
@@ -46,41 +44,5 @@ impl FileToRead {
             }
         }
         Ok(())
-    }
-
-    pub fn convert_to_int(&mut self, indexes: Vec<i32>) {
-        for index in indexes {
-            let u_index: usize = index as usize;
-            println!("Handling: {}", index);
-            let numbers_vec: Vec<i32> = self.vector_registry_all[u_index].iter()
-                .map(|x| x.parse().unwrap()).collect();
-            self.vector_registry_int.push(numbers_vec);
-        }
-    }
-
-    pub fn convert_to_string(&mut self, indexes: Vec<i32>) {
-        for index in indexes {
-            let u_index: usize = index as usize;
-            let strings_vec: Vec<String> = self.vector_registry_all[u_index].clone();
-            self.vector_registry_string.push(strings_vec);
-        }
-    }
-
-    pub fn read_vectors(&mut self, max_rows: usize) {
-        // Prints a few rows
-        for i in 0..max_rows {
-            for j in 0..self.vector_registry_string.len() {
-                print!("{}, ", self.vector_registry_string[j][i]);
-            }
-            println!();
-        }
-        println!("  ****  ");
-        for i in 0..max_rows {
-            for j in 0..self.vector_registry_int.len() {
-                print!("{}, ", self.vector_registry_int[j][i]);
-            }
-            println!();
-        }
-        println!("  ****  ");
     }
 }

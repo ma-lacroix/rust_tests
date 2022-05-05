@@ -58,17 +58,17 @@ impl VectorUtils for StringDf {
         }
         println!("  ****  ");
     }
-    fn get_max_element(self: &mut Self, index: usize) -> i32 {
+    fn get_max_element(self: &mut Self, _index: usize) -> i32 {
         println!("\nError, this is a String type!\n");
         let value = 0;
         value
     }
-    fn get_min_element(self: &mut Self, index: usize) -> i32 {
+    fn get_min_element(self: &mut Self, _index: usize) -> i32 {
         println!("\nError, this is a String type!\n");
         let value = 0;
         value
     }
-    fn get_average_value(self: &mut Self, index: usize) -> i32 {
+    fn get_average_value(self: &mut Self, _index: usize) -> i32 {
         println!("\nError, this is a String type!\n");
         let value = 0;
         value
@@ -105,21 +105,21 @@ impl VectorUtils for IntDf {
 
 }
 
-pub fn print_vectors<T: VectorUtils>(item: &mut T, max_rows: usize) {
+pub fn head<T: VectorUtils>(item: &mut T, max_rows: usize) {
     item.print_elements(max_rows);
 }
 
-pub fn vector_min<T: VectorUtils>(item: &mut T, index: usize) -> i32 {
+pub fn min<T: VectorUtils>(item: &mut T, index: usize) -> i32 {
     let value: i32 = item.get_min_element(index);
     value
 }
 
-pub fn vector_max<T: VectorUtils>(item: &mut T, index: usize) -> i32 {
+pub fn max<T: VectorUtils>(item: &mut T, index: usize) -> i32 {
     let value: i32 = item.get_max_element(index);
     value
 }
 
-pub fn vector_avg<T: VectorUtils>(item: &mut T, index: usize) -> i32 {
+pub fn mean<T: VectorUtils>(item: &mut T, index: usize) -> i32 {
     let value: i32 = item.get_average_value(index);
     value
 }

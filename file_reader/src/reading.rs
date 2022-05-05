@@ -46,3 +46,9 @@ impl FileToRead {
         Ok(())
     }
 }
+
+pub fn read_csv(path: String) -> FileToRead {
+    let mut data: FileToRead = FileToRead::new(path);
+    data.fill_vectors();
+    data
+}
